@@ -160,8 +160,11 @@ body{
 
 <header class="hero">
   <div class="hero-inner">
-    <h1>Predicting Student GPA — Project Report</h1>
-    <p class="lead">A machine learning project analyzing student data to predict semester GPA using regression and ensemble methods.</p>
+    <h1>Academic Performance Prediction — Project Report</h1>
+    <p class="lead">
+      A machine learning study analyzing demographic, behavioral, socioeconomic, and well-being 
+      features to predict semester GPA of international university students.
+    </p>
     <p class="cta">
       <a class="btn" href="project.html">View Notebook & Results</a>
       <a class="btn ghost" href="ML_Project_Notebook.ipynb" download>Download Notebook</a>
@@ -173,42 +176,72 @@ body{
 
   <section id="about" class="card">
     <h2>About the Project</h2>
-    <p>This site was generated from your Jupyter notebook. It includes data exploration, preprocessing steps, model building, evaluation metrics, and visualizations.</p>
+    <p>
+      This project examines academic performance among international students using a holistic dataset 
+      of 25 demographic, socioeconomic, behavioral, and psychological variables. 
+      Unlike traditional student-performance datasets that rely mainly on exam scores and basic demographics, 
+      this study incorporates work hours, stress, sleep patterns, financial support, social support, and 
+      lifestyle indicators to build a more realistic model of student success.
+    </p>
+    <p>
+      The goal is to predict semester GPA accurately and identify the strongest contributors to academic 
+      performance, enabling early detection of at-risk students and supporting targeted interventions.
+    </p>
   </section>
 
   <section id="method" class="card two-col">
+
     <div>
       <h3>Data & Preprocessing</h3>
       <ul>
-        <li>Dataset: Student behavioral, academic and demographic features</li>
-        <li>Preprocessing: scaling, encoding categorical variables, train-test split</li>
+        <li>25-feature dataset combining academic, behavioral, socioeconomic & well-being variables</li>
+        <li>Label encoding for categorical variables</li>
+        <li>Standardization of all numerical features</li>
+        <li>75/25 train-test split with reproducible random state</li>
+        <li>Pipeline includes encoders, scaler, and final model (ElasticNet) saved via joblib</li>
       </ul>
     </div>
+
     <div>
       <h3>Models Evaluated</h3>
       <ul>
-        <li>Linear Regression</li>
-        <li>Random Forest</li>
-        <li>XGBoost / Gradient Boosting</li>
-        <li>Neural Network</li>
+        <li>Linear Regression, Ridge, Lasso, ElasticNet, Bayesian Ridge</li>
+        <li>Support Vector Regression (RBF)</li>
+        <li>Random Forest, Extra Trees</li>
+        <li>Gradient Boosting, XGBoost, CatBoost, LightGBM</li>
+        <li>5-fold cross-validation used for RMSE & R² comparison</li>
       </ul>
     </div>
+
   </section>
 
   <section class="card highlights">
     <h2>Key Results</h2>
-    <p>Top-performing models and relevant metrics (RMSE, R²) are available in the full notebook. Visualizations and confusion matrices are embedded there.</p>
+    <p>
+      ElasticNet achieved the best performance with a cross-validated 
+      <strong>R² of 0.8625</strong> and <strong>RMSE of 0.1595</strong>, outperforming all other linear, 
+      regularized, and ensemble models.  
+      Tree-based models such as Random Forest, XGBoost, and Extra Trees showed higher error, 
+      indicating that the dataset is predominantly linear in structure.
+    </p>
+    <p>
+      Strongest predictors included study hours, attendance, sleep duration, social support, 
+      and previous semester GPA.
+    </p>
   </section>
 
   <section class="card" id="contact">
     <h2>Contact</h2>
-    <p>Built by <strong>Ananya Agarwal</strong>. Add your email here to publish publicly.</p>
+    <p>
+      Built by <strong>Ananya Agarwal</strong>.  
+      Add your email here if you want it displayed publicly on the site.
+    </p>
   </section>
 
 </main>
 
 <footer class="footer">
-  <p>© Ananya Agarwal · Generated from ML_Project_Notebook.ipynb</p>
+  <p>© Ananya Agarwal · GPA Prediction Project · NYU</p>
 </footer>
 
 </body>
